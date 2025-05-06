@@ -240,6 +240,20 @@ body {
   }
 }
 
+@media (max-width: 450px) {
+  html {
+    font-size: 7px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .attribution {
+    font-size: 1.4rem;
+  }
+}
+
 @media (max-width: 430px) {
   html {
     font-size: 7px;
