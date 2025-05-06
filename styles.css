@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ### Primary */
+
+  --Red-pri: hsl(1, 90%, 64%);
+  --Blue-pri: hsl(219, 85%, 26%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Very-light-grayish-blue: hsl(210, 60%, 98%);
+  --Light-grayish-blue-1: hsl(211, 68%, 94%);
+  --Light-grayish-blue-2: hsl(205, 33%, 90%);
+  --Grayish-blue: hsl(219, 14%, 63%);
+  --Dark-grayish-blue: hsl(219, 12%, 42%);
+  --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  max-width: 100dvw;
+  height: 120rem;
+  background-color: var(--Very-light-grayish-blue);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 10rem;
+}
+
+.container {
+  width: 55%;
+  height: auto;
+  background-color: var(--White);
+  padding: 5rem 2rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications {
+  width: 95%;
+  /* border: 1px solid black; */
+}
+
+/* Header */
+
+.notification__headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.notification__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  gap: 2rem;
+}
+
+.notification__title--desc {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.notification__title--number {
+  background-color: var(--Blue-pri);
+  padding: 0.1rem 1rem;
+  text-align: center;
+  color: var(--White);
+  font-size: 1.6rem;
+  border-radius: 0.7rem;
+}
+
+.notification__header--mark-all {
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--Dark-grayish-blue);
+
+  transition: 0.3s;
+}
+
+.notification__header--mark-all:hover {
+  animation: move 0.3s ease forwards;
+}
+
+.notification__header--mark-all:active {
+  color: var(--Blue-pri);
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-0.5rem);
+  }
+}
+
+/* Main */
+
+.notification__main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.notification__main--details {
+  position: relative;
+  width: 100%;
+
+  padding: 2rem;
+
+  cursor: pointer;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+
+  transition: 0.3s;
+}
+
+.notification__main--details:hover {
+  background-color: var(--Very-light-grayish-blue);
+}
+
+.main__details--img {
+  width: 5rem;
+}
+
+.main__details--desc {
+  width: 100%;
+  font-size: 1.5rem;
+  color: var(--Grayish-blue);
+}
+
+.main__details--time {
+  font-size: 1.4rem;
+  color: var(--Grayish-blue);
+}
+
+.notification__main--details.seen {
+  background-color: var(--Light-grayish-blue-1);
+}
+
+/* other */
+
+.cols {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  font-weight: bold;
+  color: var(--Very-dark-blue);
+}
+
+.action {
+  font-weight: bold;
+  color: var(--Dark-grayish-blue);
+}
+
+.hidden {
+  display: none;
+}
+
+.notification__main--details--acc {
+  margin-left: 9rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+
+.details-acc {
+  padding: 2rem;
+  color: var(--Dark-grayish-blue);
+  border: 0.1rem solid var(--Grayish-blue);
+}
+
+.more {
+  width: 5rem;
+
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bullet::after {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* .attribution */
+.attribution {
+  position: fixed;
+  font-size: 1.6rem;
+  text-align: center;
+
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 7px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .attribution {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 6px;
+  }
+}
